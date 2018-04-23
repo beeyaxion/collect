@@ -1,0 +1,48 @@
+
+<div>
+  我是父组件
+</div>
+<div>
+  <input type="text" placeholder="请输入股票代码" [(ngModel)]="stock">
+  <app-order [stockCode]="stock" [amount]="100"></app-order>
+</div>
+
+
+<app-price-quote (bug)="bugHandler($event)"></app-price-quote>
+
+<div>
+  这里是在报价组件外部 {{priceQuote.lastPrice}}******{{priceQuote.stockCode}}
+</div>
+
+<app-order [priceQuote]="priceQuote"></app-order>
+
+<app-life [name]="title"></app-life>
+
+<div class="parent">
+  <h2>我是父组件</h2>
+  <div>
+    问候语：<input type="text" [(ngModel)]="greeting">
+  </div>
+  <div>
+    姓名：<input type="text" [(ngModel)]="user.name">
+  </div>
+  <app-child [greeting]="greeting" [user]="user"></app-child>
+</div>
+
+<app-child1 #child1></app-child1>
+<app-child1 #child2></app-child1>
+<button (click)="child2.greeting('Jerry')">调用child2的greeting方法</button>
+<br>
+{{message}}
+
+<div class="wrapper">
+  <h2>我是父组件</h2>
+  <div>这个div是定义在父组件中</div>
+  <app-child2>
+    <div class="footer">页脚。这个div是父组件投影在子组件中{{title}}</div>
+    <div class="header">页头。这个div是父组件投影在子组件中</div>
+
+  </app-child2>
+</div>
+
+<div [innerHTML]="divContent"></div>

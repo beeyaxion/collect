@@ -1,0 +1,95 @@
+node.js angular/cli  webstorm
+http://blog.csdn.net/voke_/article/details/76418116
+
+npm -v
+npm install -g @angular/cli
+ng -v
+ng new auction 创建项目
+
+npm install jquery --save
+npm install bootstrap --save
+
+npm install @types/jquery --save-dev
+npm install @types/bootstrap --save-dev
+
+ng g componet stars  
+
+navbar-inverse  黑底白字 
+navbar-fixed-top 固定在顶部
+
+ng new router --routing
+
+http://blog.csdn.net/quuqu/article/details/64121812  
+https://stackoverflow.com/questions/48394003/cannot-find-module-angular-devkit-core
+http://blog.csdn.net/bboyjoe/article/details/51064769
+npm run start
+ng g component code404
+
+resolve守卫在进入路由之前准备数据，防止页面显示有些数据不显示
+
+http://via.placeholder.com/320x150
+
+ng g component product1
+ng g service shared/product  生成一个服务
+ng new my-app 
+
+ng g pipe pipe/multiple 生产一个管道
+
+OnChanges只有在输入属性变化时才触发（@Input()）
+
+不可以在ngAfterViewInit  ngAfterViewChecked 中改变组件属性，实现可以用定时器来解决。
+先组装子组件视图 在父组件视图
+
+投影：先父  后子
+视图：先子  后父
+
+contructor
+ngOnChanegs
+ngOninit
+ngDoCheck
+ngAfterContentInit
+ngAfterContentChecked
+ngAfterViewInit
+ngAfterViewChecked
+ngOnDestroy (路由到其他时触发 清除定时器  使用的资源)
+
+
+ng g directive directives/equalValidator  
+
+【疑问】
+1.怎么全文件搜索
+2.提供器  与 中间人 
+3.push unshift
+4.group 下的子校验不成功
+
+npm init -y 初始化工具，生成package.json文件
+npm i @types/node --save 引入ts语法包文件
+node build/hello_server.js 运行服务器
+npm install express --save 引入express框架
+
+shift()方法：移除数组中的第一项并返回该项
+
+push()方法：从数组末端添加项
+
+若是想实现相反的操作的话，可以使用
+
+unshift()方法：在数组的前端添加项
+
+pop()方法：从数组末端移除项
+
+var colors=new Array();
+
+
+ng build --env=prod
+
+
+
+
+
+
+
+
+
+
+
+ 
