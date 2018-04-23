@@ -6,3 +6,17 @@ https://blog.csdn.net/zshake/article/details/72307064
 
 
 https://blog.csdn.net/zshake/article/details/72311617
+
+
+import { ViewEncapsulation } from "@angular/core";
+ 
+ 
+ 样式作用域
+@Component({
+  templateUrl: "./login.html",
+  styleUrls: ['./login.css','/bootstrap/css/bootstrap.min.css'],
+  encapsulation: ViewEncapsulation.Emulated
+})
+
+
+https://www.2cto.com/kf/201710/689026.html
