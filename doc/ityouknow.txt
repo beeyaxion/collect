@@ -1,1 +1,5 @@
 https://github.com/ityouknow
+
+
+typescript
+https://www.cnblogs.com/accordion/p/8973209.html

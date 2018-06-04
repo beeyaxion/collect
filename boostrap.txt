@@ -20,3 +20,8 @@ import { ViewEncapsulation } from "@angular/core";
 
 
 https://www.2cto.com/kf/201710/689026.html
+
+https://zhidao.baidu.com/question/278030489.html
+
+水平居中
+https://blog.csdn.net/summer_lover_/article/details/66479576
