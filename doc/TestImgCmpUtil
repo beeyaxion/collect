@@ -1,0 +1,166 @@
+package com.huawei.nos.fenixadapt;
+
+import java.awt.AWTException;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class TestImgCmpUtil
+{
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestImgCmpUtil.class);
+
+    @Test
+    public void testb() throws Exception
+    {
+
+        LOGGER.info("begin ");
+
+        // 获取屏幕分辨率
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        // 以屏幕的尺寸创建个矩形
+        Rectangle screenRect = new Rectangle(d);
+
+        Robot robot = new Robot();
+        // 设置Robot产生一个动作后的休眠时间,否则执行过快
+        robot.setAutoDelay(100);
+
+        String loginHomePage = "C:\\pics\\fusionstage_home.PNG";
+        String domainTxtbox = "C:\\pics\\zuhuming.PNG";
+        String userTxtbox = "C:\\pics\\yonghuming.PNG";
+        String pswTxtBox = "C:\\pics\\mima.PNG";
+        String loginButton = "C:\\pics\\dengluanniu.PNG";
+        String userinfoButton = "C:\\pics\\youshangjiaoxiaoren.PNG";
+        String logoutButton = "C:\\pics\\zhuxiao.PNG";
+
+        SwitchDisplay(robot);
+
+        CutDisplay(screenRect, robot, loginHomePage);
+
+        Point point = new ImgCmpUtil().isPatchExist(loginHomePage, domainTxtbox);
+        robot.mouseMove(point.x, point.y);
+        LOGGER.info("domain");
+        robot.mousePress(InputEvent.BUTTON1_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+        robot.keyPress(KeyEvent.VK_F);
+        robot.keyRelease(KeyEvent.VK_F);
+        robot.keyPress(KeyEvent.VK_E);
+        robot.keyRelease(KeyEvent.VK_E);
+        robot.keyPress(KeyEvent.VK_N);
+        robot.keyRelease(KeyEvent.VK_N);
+        robot.keyPress(KeyEvent.VK_I);
+        robot.keyRelease(KeyEvent.VK_I);
+        robot.keyPress(KeyEvent.VK_X);
+        robot.keyRelease(KeyEvent.VK_X);
+
+        point = new ImgCmpUtil().isPatchExist(loginHomePage, userTxtbox);
+        robot.mouseMove(point.x, point.y);
+        LOGGER.info("user");
+        robot.mousePress(InputEvent.BUTTON1_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+        robot.keyPress(KeyEvent.VK_B);
+        robot.keyRelease(KeyEvent.VK_B);
+        robot.keyPress(KeyEvent.VK_I);
+        robot.keyRelease(KeyEvent.VK_I);
+        robot.keyPress(KeyEvent.VK_Y);
+        robot.keyRelease(KeyEvent.VK_Y);
+        robot.keyPress(KeyEvent.VK_A);
+        robot.keyRelease(KeyEvent.VK_A);
+        robot.keyPress(KeyEvent.VK_X);
+        robot.keyRelease(KeyEvent.VK_X);
+        robot.keyPress(KeyEvent.VK_I);
+        robot.keyRelease(KeyEvent.VK_I);
+        robot.keyPress(KeyEvent.VK_N);
+        robot.keyRelease(KeyEvent.VK_N);
+
+        point = new ImgCmpUtil().isPatchExist(loginHomePage, pswTxtBox);
+        robot.mouseMove(point.x, point.y);
+        LOGGER.info("psw");
+        robot.mousePress(InputEvent.BUTTON1_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+        robot.keyPress(KeyEvent.VK_B);
+        robot.keyRelease(KeyEvent.VK_B);
+        robot.keyPress(KeyEvent.VK_Y);
+        robot.keyRelease(KeyEvent.VK_Y);
+        robot.keyPress(KeyEvent.VK_X);
+        robot.keyRelease(KeyEvent.VK_X);
+        robot.keyPress(KeyEvent.VK_1);
+        robot.keyRelease(KeyEvent.VK_1);
+        robot.keyPress(KeyEvent.VK_2);
+        robot.keyRelease(KeyEvent.VK_2);
+        robot.keyPress(KeyEvent.VK_3);
+        robot.keyRelease(KeyEvent.VK_3);
+        robot.keyPress(KeyEvent.VK_4);
+        robot.keyRelease(KeyEvent.VK_4);
+        robot.keyPress(KeyEvent.VK_5);
+        robot.keyRelease(KeyEvent.VK_5);
+        robot.keyPress(KeyEvent.VK_6);
+        robot.keyRelease(KeyEvent.VK_6);
+
+        point = new ImgCmpUtil().isPatchExist(loginHomePage, loginButton);
+        robot.mouseMove(point.x, point.y);
+        LOGGER.info("login");
+        robot.mousePress(InputEvent.BUTTON1_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+
+        Sleep(10 * 1000);
+        CutDisplay(screenRect, robot, loginHomePage);
+
+        point = new ImgCmpUtil().isPatchExist(loginHomePage, userinfoButton);
+        robot.mouseMove(point.x, point.y);
+        LOGGER.info("userinfo");
+        robot.mousePress(InputEvent.BUTTON1_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+
+        CutDisplay(screenRect, robot, loginHomePage);
+
+        point = new ImgCmpUtil().isPatchExist(loginHomePage, logoutButton);
+        robot.mouseMove(point.x, point.y);
+        LOGGER.info("logout");
+        robot.mousePress(InputEvent.BUTTON1_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+
+        LOGGER.info("end");
+
+    }
+
+    private void CutDisplay(Rectangle screenRect, Robot robot, String savedPicPath) throws IOException
+    {
+        // 截图（截取整个屏幕图片）
+        BufferedImage bufferedImage = robot.createScreenCapture(screenRect);
+        // 保存截图
+        File file = new File(savedPicPath);
+        ImageIO.write(bufferedImage, "png", file);
+    }
+
+    private void SwitchDisplay(Robot robot)
+    {
+        // 按下Alt+TAB键（切换桌面窗口）
+        robot.keyPress(KeyEvent.VK_ALT);
+        for (int j = 1; j <= 1; j++)
+        {
+            robot.keyPress(KeyEvent.VK_TAB);
+            robot.keyRelease(KeyEvent.VK_TAB);
+        }
+        robot.keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void Sleep(long time) throws InterruptedException
+    {
+        LOGGER.info("begin sleep " + time / 1000 + "s");
+        Thread.sleep(time);
+    }
+}
