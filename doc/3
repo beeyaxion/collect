@@ -1,0 +1,91 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WINUserControl
+{
+    public partial class MapControl : UserControl
+    {
+        public MapControl()
+        {
+            InitializeComponent();
+        }
+
+
+      
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+            string skill = this.txtSkillName.Text + ";" + this.txtSkillTime;
+            if (this.listSkill.Items.Contains(skill))
+            {
+                MessageBox.Show("已经存在.");
+                return;
+            }
+            this.listSkill.Items.Add(skill);
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (this.listSkill.SelectedIndex >= 0)
+                this.listSkill.Items.RemoveAt(this.listSkill.SelectedIndex);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string skill = this.listSkill.SelectedItem as string;
+                this.txtSkillName.Text = skill.Split(';')[0];
+                this.txtSkillTime.Text = skill.Split(';')[1];
+            }
+            catch (Exception ex )
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnUpdatedCommited_Click(object sender, EventArgs e)
+        {
+            string skill = this.txtSkillName.Text + ";" + this.txtSkillTime.Text;
+            int index = this.listSkill.SelectedIndex;
+            if (index > -1)
+            {
+                this.listSkill.Items.RemoveAt(index);
+                this.listSkill.Items.Insert(index, skill);
+            }
+
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            if (this.listSkill.SelectedIndex >= 1)
+            {
+                int index = this.listSkill.SelectedIndex ;
+                string skill = this.listSkill.SelectedItem as string;
+                this.listSkill.Items.RemoveAt(index);
+                this.listSkill.Items.Insert(index-1, skill);
+            }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            if (this.listSkill.SelectedIndex >= 1)
+            {
+                int index = this.listSkill.SelectedIndex;
+                string skill = this.listSkill.SelectedItem as string;
+                this.listSkill.Items.RemoveAt(index);
+                this.listSkill.Items.Insert(index + 1, skill);
+            }
+        }
+    }
+}
