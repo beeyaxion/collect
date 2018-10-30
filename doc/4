@@ -1,0 +1,267 @@
+namespace WINUserControl
+{
+    partial class MapControl
+    {
+        /// <summary> 
+        /// 必需的设计器变量。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// 清理所有正在使用的资源。
+        /// </summary>
+        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region 组件设计器生成的代码
+
+        /// <summary> 
+        /// 设计器支持所需的方法 - 不要修改
+        /// 使用代码编辑器修改此方法的内容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtSkillName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtSkillTime = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.listSkill = new System.Windows.Forms.ListBox();
+            this.btnUpdatedCommited = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Map";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(315, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "初始位置";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(315, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "中间位置";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(315, 139);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "最终位置";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(2, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "技能";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(388, 88);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "1.2";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(388, 112);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 21);
+            this.textBox2.TabIndex = 2;
+            this.textBox2.Text = "2.3";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(388, 136);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 21);
+            this.textBox3.TabIndex = 2;
+            this.textBox3.Text = "3.4";
+            // 
+            // txtSkillName
+            // 
+            this.txtSkillName.Location = new System.Drawing.Point(37, 17);
+            this.txtSkillName.Name = "txtSkillName";
+            this.txtSkillName.Size = new System.Drawing.Size(100, 21);
+            this.txtSkillName.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(139, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "冷却时间";
+            // 
+            // txtSkillTime
+            // 
+            this.txtSkillTime.Location = new System.Drawing.Point(198, 17);
+            this.txtSkillTime.Name = "txtSkillTime";
+            this.txtSkillTime.Size = new System.Drawing.Size(100, 21);
+            this.txtSkillTime.TabIndex = 2;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(304, 17);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(385, 17);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 3;
+            this.btnDel.Text = "delete";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(304, 46);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // listSkill
+            // 
+            this.listSkill.FormattingEnabled = true;
+            this.listSkill.ItemHeight = 12;
+            this.listSkill.Items.AddRange(new object[] {
+            "a;5",
+            "b;120",
+            "s;11"});
+            this.listSkill.Location = new System.Drawing.Point(2, 40);
+            this.listSkill.Name = "listSkill";
+            this.listSkill.Size = new System.Drawing.Size(226, 148);
+            this.listSkill.TabIndex = 4;
+            // 
+            // btnUpdatedCommited
+            // 
+            this.btnUpdatedCommited.Location = new System.Drawing.Point(385, 46);
+            this.btnUpdatedCommited.Name = "btnUpdatedCommited";
+            this.btnUpdatedCommited.Size = new System.Drawing.Size(104, 23);
+            this.btnUpdatedCommited.TabIndex = 3;
+            this.btnUpdatedCommited.Text = "updateCommited";
+            this.btnUpdatedCommited.UseVisualStyleBackColor = true;
+            this.btnUpdatedCommited.Click += new System.EventHandler(this.btnUpdatedCommited_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.Location = new System.Drawing.Point(234, 109);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(75, 23);
+            this.btnDown.TabIndex = 3;
+            this.btnDown.Text = "down";
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // btnUp
+            // 
+            this.btnUp.Location = new System.Drawing.Point(234, 80);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(75, 23);
+            this.btnUp.TabIndex = 3;
+            this.btnUp.Text = "up";
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // MapControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Controls.Add(this.listSkill);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnUpdatedCommited);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnUp);
+            this.Controls.Add(this.btnDown);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtSkillTime);
+            this.Controls.Add(this.txtSkillName);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "MapControl";
+            this.Size = new System.Drawing.Size(505, 208);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSkillName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtSkillTime;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.ListBox listSkill;
+        private System.Windows.Forms.Button btnUpdatedCommited;
+        private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Button btnUp;
+    }
+}
