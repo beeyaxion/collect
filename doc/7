@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.IO;
+using System.Text;
+
+namespace WINUserControl
+{
+    static class Program
+    {
+        /// <summary>
+        /// 应用程序的主入口点。
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Form1());
+
+
+            string strJson = getJsonByObject(JsonObject.getPerson());
+            Person myObject1 = getObjectByJson(strJson, new Person()) as Person;
+            Console.WriteLine(strJson);
+
+
+            //strJson = getJsonByObject(JsonObject.getDicList());
+            //List<Dictionary<string, object>> myObject2 = getObjectByJson(strJson, new List<Dictionary<string, object>>()) as List<Dictionary<string, object>>;
+            //Console.WriteLine(strJson);
+
+            //strJson = getJsonByObject(JsonObject.getPersonList());
+            //List<Person> myObject3 = getObjectByJson(strJson, new List<Person>()) as List<Person>;
+            //Console.WriteLine(strJson);
+
+            //strJson = getJsonByObject(JsonObject.getStringList());
+            //List<string>  myObject4 = getObjectByJson(strJson, new List<string>()) as List<string>;
+            //Console.WriteLine(strJson);
+
+
+            TxtUtil.Write("c://a.txt", strJson);
+            string context =TxtUtil.Read("c://a.txt");
+            Console.WriteLine(context);
+
+        }
+
+        private static string getJsonByObject(Object obj)
+        {
+            //实例化DataContractJsonSerializer对象，需要待序列化的对象类型
+            DataContractJsonSerializer serializer = new DataContractJsonSerializer(obj.GetType());
+            //实例化一个内存流，用于存放序列化后的数据
+            MemoryStream stream = new MemoryStream();
+            //使用WriteObject序列化对象
+            serializer.WriteObject(stream, obj);
+            //写入内存流中
+            byte[] dataBytes = new byte[stream.Length];
+            stream.Position = 0;
+            stream.Read(dataBytes, 0, (int)stream.Length);
+            //通过UTF8格式转换为字符串
+            return Encoding.UTF8.GetString(dataBytes);
+        }
+
+        private static Object getObjectByJson(string jsonString, Object obj)
+        {
+            //实例化DataContractJsonSerializer对象，需要待序列化的对象类型
+            DataContractJsonSerializer serializer = new DataContractJsonSerializer(obj.GetType());
+            //把Json传入内存流中保存
+            MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(jsonString));
+            // 使用ReadObject方法反序列化成对象
+            return serializer.ReadObject(stream);
+        }
+    }
+}
