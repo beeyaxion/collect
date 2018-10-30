@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WINUserControl
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            MapControl mapControl = new MapControl();
+            this.flowLayoutPanel1.Controls.Add(mapControl);
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            int index = Int32.Parse(this.txtIndex.Text)-1;
+            MapControl mapControl=   this.flowLayoutPanel1.Controls[index] as MapControl;
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = Int32.Parse(this.txtIndex.Text) - 1;
+                this.flowLayoutPanel1.Controls.RemoveAt(index);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCount_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(""+this.flowLayoutPanel1.Controls.Count);
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
+}
