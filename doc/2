@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace WINUserControl
+{
+    static public class JsonObject
+    {
+        static public Person getPerson()
+        {
+            Person person = new Person();
+            person.id = 20;
+            person.name = "slive";
+            person.age = 24;
+            return person;
+        }
+        static public List<Person> getPersonList()
+        {
+            List<Person> personList = new List<Person>();
+            Person person = new Person();
+            person.id = 20;
+            person.name = "slive";
+            person.age = 24;
+            Person person2 = new Person();
+            person2.id = 30;
+            person2.name = "jack";
+            person2.age = 34;
+            Person person3 = new Person();
+            person3.id = 40;
+            person3.name = "damon";
+            person3.age = 54;
+            personList.Add(person);
+            personList.Add(person2);
+            personList.Add(person3);
+            return personList;
+        }
+        static public List<string> getStringList()
+        {
+            List<string> stringlist = new List<string>();
+            stringlist.Add("jack");
+            stringlist.Add("dick");
+            stringlist.Add("sean");
+            return stringlist;
+        }
+        static public List<Dictionary<string, object>> getDicList()
+        {
+            List<Dictionary<string, object>> dicList = new List<Dictionary<string, object>>();
+            Dictionary<string, object> dic1 = new Dictionary<string, object>();
+            dic1.Add("id", 17);
+            dic1.Add("name", "jerry");
+            dic1.Add("age", 24);
+            Dictionary<string, object> dic2 = new Dictionary<string, object>();
+            dic2.Add("id", 18);
+            dic2.Add("name", "meimei");
+            dic2.Add("age", 23);
+            Dictionary<string, object> dic3 = new Dictionary<string, object>();
+            dic3.Add("id", 19);
+            dic3.Add("name", "damon");
+            dic3.Add("age", 28);
+            dicList.Add(dic1);
+            dicList.Add(dic2);
+            dicList.Add(dic3);
+            return dicList;
+        }
+    }
+}
