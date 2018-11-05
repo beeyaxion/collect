@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WINUserControl
+{
+    public class KeyModel
+    {
+        bool isDown;
+        string keyName;
+        double span;
+
+        public bool IsDown
+        {
+            get
+            {
+                return isDown;
+            }
+
+            set
+            {
+                isDown = value;
+            }
+        }
+
+        public string KeyName
+        {
+            get
+            {
+                return keyName;
+            }
+
+            set
+            {
+                keyName = value;
+            }
+        }
+
+        public double Span
+        {
+            get
+            {
+                return span;
+            }
+
+            set
+            {
+                span = value;
+            }
+        }
+
+       
+
+
+    }
+}
